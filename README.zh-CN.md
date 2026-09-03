@@ -24,6 +24,12 @@
 
 ## 安装说明
 
+### 从 npm 安装（推荐）
+
+```bash
+pi install npm:@cqh6666/pi-image
+```
+
 ### 从 GitHub 安装
 
 ```bash

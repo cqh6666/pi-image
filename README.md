@@ -24,6 +24,12 @@
 
 ## Installation
 
+### From npm (Recommended)
+
+```bash
+pi install npm:@cqh6666/pi-image
+```
+
 ### From GitHub
 
 ```bash

@@ -1,5 +1,5 @@
 {
-  "name": "pi-image",
+  "name": "@cqh6666/pi-image",
   "version": "1.0.0",
   "description": "Image gallery, remote URL caching, multimodal delivery, and macOS Quick Look for Pi",
   "type": "module",
