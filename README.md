@@ -2,6 +2,9 @@
 
 [English](README.md) | [简体中文](README.zh-CN.md)
 
+[![npm version](https://img.shields.io/npm/v/@cqh6666/pi-image.svg)](https://www.npmjs.com/package/@cqh6666/pi-image)
+[![license](https://img.shields.io/github/license/cqh6666/pi-image.svg)](LICENSE)
+
 > Comprehensive image gallery, multimodal auto-delivery, remote URL caching, Token cost estimation, and macOS Quick Look for [Pi](https://pi.dev).
 
 `pi-image` optimizes visual workflows in Pi. It intercepts local screenshots, pasted images, and remote HTTP/HTTPS image URLs, delivers them as multimodal attachments directly to vision models, and provides an interactive terminal gallery with macOS Quick Look.
@@ -55,7 +58,7 @@ Or add the path directly to your `~/.pi/agent/settings.json`:
 ### Try Without Installing
 
 ```bash
-pi -e /path/to/pi-image
+pi -e npm:@cqh6666/pi-image
 ```
 
 ---
@@ -87,8 +90,8 @@ When the gallery is open:
 
 | Key | Action |
 | :--- | :--- |
-| `Space` | **Quick Look Preview** (macOS native floating HUD) |
-| `O` | **Open in System App** (macOS Preview.app) |
+| `Space` | **Quick Look Preview** (macOS native floating HUD, Windows QuickLook, or fallback) |
+| `O` | **Open in System App** (macOS Preview.app, Windows Photos, or Linux default viewer) |
 | `→` / `↓` / `N` / `Tab` | Next image |
 | `←` / `↑` / `P` / `Shift+Tab` | Previous image |
 | `Esc` / `Q` | Close gallery and return to terminal |

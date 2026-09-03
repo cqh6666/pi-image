@@ -2,6 +2,9 @@
 
 [English](README.md) | [简体中文](README.zh-CN.md)
 
+[![npm version](https://img.shields.io/npm/v/@cqh6666/pi-image.svg)](https://www.npmjs.com/package/@cqh6666/pi-image)
+[![license](https://img.shields.io/github/license/cqh6666/pi-image.svg)](LICENSE)
+
 > 专为 [Pi](https://pi.dev) 打造的交互式图片画廊、多模态直传、远程 URL 自动拉取、Token 消耗估算与 macOS Quick Look 快速预览插件。
 
 `pi-image` 全面优化了在终端中使用 Pi 时的视觉交互体验。它可以自动捕获剪贴板截图、本地文件路径以及远程 HTTP/HTTPS 图片链接，并将其转化为多模态附件直传给大模型；同时提供了基于终端内联图形与 macOS 原生快速预览的交互式画廊。
@@ -55,7 +58,7 @@ pi install /path/to/pi-image
 ### 免安装单次试用
 
 ```bash
-pi -e git:github.com/cqh6666/pi-image
+pi -e npm:@cqh6666/pi-image
 ```
 
 ---
@@ -87,8 +90,8 @@ pi -e git:github.com/cqh6666/pi-image
 
 | 按键 | 对应动作 |
 | :--- | :--- |
-| `空格` (Space) | **macOS 原生快速预览** (Quick Look 悬浮窗) |
-| `O` | **系统应用打开** (调用 Preview.app) |
+| `空格` (Space) | **原生快速预览** (macOS 系统悬浮窗、Windows QuickLook 或平滑降级) |
+| `O` | **系统应用打开** (macOS Preview.app、Windows 照片或 Linux 默认查看器) |
 | `→` / `↓` / `N` / `Tab` | 切换到下一张图片 |
 | `←` / `↑` / `P` / `Shift+Tab` | 切换到上一张图片 |
 | `Esc` / `Q` | 关闭画廊并返回终端光标 |
