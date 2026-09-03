@@ -4,6 +4,8 @@
 
 `pi-image` optimizes visual workflows in Pi. It intercepts local screenshots, pasted images, and remote HTTP/HTTPS image URLs, delivers them as multimodal attachments directly to vision models, and provides an interactive terminal gallery with macOS Quick Look.
 
+![pi-image Terminal Gallery Preview](assets/preview.png)
+
 ---
 
 ## Features

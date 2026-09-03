@@ -25,7 +25,8 @@
   "pi": {
     "extensions": [
       "./src/index.ts"
-    ]
+    ],
+    "image": "https://raw.githubusercontent.com/cqh6666/pi-image/main/assets/preview.png"
   },
   "peerDependencies": {
     "@earendil-works/pi-ai": "*",
