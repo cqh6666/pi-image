@@ -20,6 +20,12 @@
 
 ## Installation
 
+### From GitHub
+
+```bash
+pi install git:github.com/cqh6666/pi-image
+```
+
 ### From Local Source
 
 ```bash

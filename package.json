@@ -12,7 +12,15 @@
     "multimodal",
     "vision"
   ],
-  "author": "chenqh114",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cqh6666/pi-image.git"
+  },
+  "homepage": "https://github.com/cqh6666/pi-image#readme",
+  "bugs": {
+    "url": "https://github.com/cqh6666/pi-image/issues"
+  },
+  "author": "cqh6666",
   "license": "MIT",
   "pi": {
     "extensions": [
