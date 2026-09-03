@@ -1,5 +1,7 @@
 # pi-image
 
+[English](README.md) | [简体中文](README.zh-CN.md)
+
 > Comprehensive image gallery, multimodal auto-delivery, remote URL caching, Token cost estimation, and macOS Quick Look for [Pi](https://pi.dev).
 
 `pi-image` optimizes visual workflows in Pi. It intercepts local screenshots, pasted images, and remote HTTP/HTTPS image URLs, delivers them as multimodal attachments directly to vision models, and provides an interactive terminal gallery with macOS Quick Look.
