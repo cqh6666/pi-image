@@ -1,0 +1,27 @@
+{
+  "name": "pi-image",
+  "version": "1.0.0",
+  "description": "Image gallery, remote URL caching, multimodal delivery, and macOS Quick Look for Pi",
+  "type": "module",
+  "main": "src/index.ts",
+  "keywords": [
+    "pi-package",
+    "image",
+    "gallery",
+    "quicklook",
+    "multimodal",
+    "vision"
+  ],
+  "author": "chenqh114",
+  "license": "MIT",
+  "pi": {
+    "extensions": [
+      "./src/index.ts"
+    ]
+  },
+  "peerDependencies": {
+    "@earendil-works/pi-ai": "*",
+    "@earendil-works/pi-coding-agent": "*",
+    "@earendil-works/pi-tui": "*"
+  }
+}
