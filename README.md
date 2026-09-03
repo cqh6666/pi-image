@@ -31,7 +31,7 @@ pi install git:github.com/cqh6666/pi-image
 ### From Local Source
 
 ```bash
-pi install /Users/chenqh114/githubProjects/pi-image
+pi install /path/to/pi-image
 ```
 
 Or add the path directly to your `~/.pi/agent/settings.json`:
@@ -39,7 +39,7 @@ Or add the path directly to your `~/.pi/agent/settings.json`:
 ```json
 {
   "packages": [
-    "/Users/chenqh114/githubProjects/pi-image"
+    "/path/to/pi-image"
   ]
 }
 ```
@@ -47,7 +47,7 @@ Or add the path directly to your `~/.pi/agent/settings.json`:
 ### Try Without Installing
 
 ```bash
-pi -e /Users/chenqh114/githubProjects/pi-image
+pi -e /path/to/pi-image
 ```
 
 ---
