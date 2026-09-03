@@ -82,6 +82,18 @@ function getImageSourceLabel(filePath: string): string {
 	return "本地文件";
 }
 
+function isWsl(): boolean {
+	try {
+		if (process.platform === "linux" && existsSync("/proc/version")) {
+			const version = readFileSync("/proc/version", "utf-8").toLowerCase();
+			return version.includes("microsoft") || version.includes("wsl");
+		}
+	} catch {
+		// Ignore check errors
+	}
+	return false;
+}
+
 let activeQuickLookProc: ReturnType<typeof spawn> | null = null;
 
 function quickLookImage(filePath: string): void {
@@ -95,11 +107,23 @@ function quickLookImage(filePath: string): void {
 				}
 			}
 			activeQuickLookProc = spawn("qlmanage", ["-p", filePath], { detached: true, stdio: "ignore" });
+		} else if (process.platform === "win32") {
+			// On Windows, try native QuickLook.exe if installed
+			const child = spawn("quicklook.exe", [filePath], { detached: true, stdio: "ignore" });
+			child.on("error", () => {
+				openInSystemViewer(filePath);
+			});
+		} else if (isWsl()) {
+			// In WSL, try quicklook.exe via interop, fallback to wslview/open
+			const child = spawn("quicklook.exe", [filePath], { detached: true, stdio: "ignore" });
+			child.on("error", () => {
+				openInSystemViewer(filePath);
+			});
 		} else {
 			openInSystemViewer(filePath);
 		}
 	} catch {
-		// Ignore launch errors
+		openInSystemViewer(filePath);
 	}
 }
 
@@ -109,6 +133,16 @@ function openInSystemViewer(filePath: string): void {
 			spawn("open", [filePath], { detached: true, stdio: "ignore" });
 		} else if (process.platform === "win32") {
 			spawn("cmd.exe", ["/c", "start", '""', filePath], { detached: true, stdio: "ignore" });
+		} else if (isWsl()) {
+			// In WSL, use wslview first, then fallback to powershell.exe
+			const child = spawn("wslview", [filePath], { detached: true, stdio: "ignore" });
+			child.on("error", () => {
+				try {
+					spawn("powershell.exe", ["-NoProfile", "-NonInteractive", "-Command", `Start-Process (wslpath -w '${filePath.replace(/'/g, "''")}')`], { detached: true, stdio: "ignore" });
+				} catch {
+					spawn("xdg-open", [filePath], { detached: true, stdio: "ignore" });
+				}
+			});
 		} else {
 			spawn("xdg-open", [filePath], { detached: true, stdio: "ignore" });
 		}
